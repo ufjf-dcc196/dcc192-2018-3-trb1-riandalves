@@ -47,6 +47,7 @@ public class EventoActivity extends AppCompatActivity {
         });
         rvListaEventos.setAdapter(adapter);
 
+
         int total = DAO.getEventoInstance().size();
 
         txtTotalEventos.setText("Total de Eventos: " + total);

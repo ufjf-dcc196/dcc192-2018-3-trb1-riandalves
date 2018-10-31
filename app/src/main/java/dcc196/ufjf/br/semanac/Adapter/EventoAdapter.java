@@ -49,7 +49,7 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return 0;
+        return eventoList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
