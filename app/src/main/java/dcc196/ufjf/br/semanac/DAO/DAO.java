@@ -19,10 +19,12 @@ public class DAO {
         if (lstParticipantes == null)
         {
             lstParticipantes = new ArrayList<Participante>();
-            Participante p1 = new Participante("Mateus", "mateusgon57@gmail.com", "00000000000", null);
-            Participante p2 = new Participante("Gabriel", "gabrielmsanta97@gmail.com", "00123456789", null);
+            Participante p1 = new Participante("Rian Alves", "rianalves@gmail.com", "00000000000", null);
+            Participante p2 = new Participante("João Dias", "jpdias@gmail.com", "111111111111", null);
+            Participante p3 = new Participante("Pedro Fernandes ", "pfernandes@gmail.com", "2222222222", null);
             lstParticipantes.add(p1);
             lstParticipantes.add(p2);
+            lstParticipantes.add(p3);
         }
         return lstParticipantes;
     }
@@ -31,7 +33,7 @@ public class DAO {
     {
         if (lstEventos == null)
         {
-            String data = "26/10/2018 20:30";
+            String data = "31/10/2018 19:30";
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
             Calendar cal = Calendar.getInstance();
             try {
@@ -41,8 +43,8 @@ public class DAO {
             }
 
             lstEventos = new ArrayList<Evento>();
-            Evento e1 = new Evento("Palestra de jogos", "S205", cal, "Mateus Gonçalo", "Abordará o desenvolvimento de jogos", null, 30, 0);
-            Evento e2 = new Evento("Selenium Web Driver", "L107", cal, "Gabriel Martins", "Abordará o uso do Selenium", null, 40, 0);
+            Evento e1 = new Evento("Androi Studio", "LAB4", cal, "Igor", "Desenvolvimento de Mobile", null, 50, 0);
+            Evento e2 = new Evento("Testes de Software", "SALA10", cal, "Vânia Oliveira", "Abordará o uso do ferramentas de Software", null, 50, 0);
             lstEventos.add(e1);
             lstEventos.add(e2);
         }

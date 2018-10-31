@@ -114,6 +114,7 @@ public class ParticipanteDetalhesActivity extends AppCompatActivity {
             adapter2 = new ParticipanteDetalhesAdapter(eventosDisponiveis);
         }
 
+    //Clique longo
         adapter.setOnParticipanteLongClickListener(new ParticipanteDetalhesAdapter.OnParticipanteLongClickListener() {
             @Override
             public void onParticipanteLongClick(View participanteView, int position) {
@@ -124,10 +125,11 @@ public class ParticipanteDetalhesActivity extends AppCompatActivity {
                 {
                     if (!e.getParticipanteList().get(i).getCpf().equals(participante.getCpf()))
                     {
+                        //não está. Pode ser adicionado
                         partis.add(e.getParticipanteList().get(i));
                     }
                 }
-                e.setParticipanteList(partis);
+                e.setParticipanteList(partis);//adicionamos o participante ao evento
                 List <Evento> eventosInscritos2 = new ArrayList<>();
                 for (int i = 0; i < eventosInscritos.size(); i++)
                 {
@@ -163,7 +165,7 @@ public class ParticipanteDetalhesActivity extends AppCompatActivity {
         });
         rclEventosInscritos.setAdapter(adapter);
 
-
+  //Todos os eventos
         adapter2.setOnParticipanteLongClickListener(new ParticipanteDetalhesAdapter.OnParticipanteLongClickListener() {
             @Override
             public void onParticipanteLongClick(View participanteView, int position) {
@@ -178,6 +180,7 @@ public class ParticipanteDetalhesActivity extends AppCompatActivity {
                         Boolean inserir = true;
                         for (int j = 0; j < participante.getEventos().size(); j++)
                         {
+                            //Verificar se os participantes já tão inscritos no Evento
                             if (eventosTodos.get(i).getNome().equals(participante.getEventos().get(j).getNome()))
                             {
                                 inserir = false;

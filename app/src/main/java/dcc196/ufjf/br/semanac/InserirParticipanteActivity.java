@@ -11,8 +11,8 @@ import dcc196.ufjf.br.semanac.DAO.DAO;
 import dcc196.ufjf.br.semanac.Modelo.Participante;
 
 public class InserirParticipanteActivity extends AppCompatActivity {
-    private Button btnConfimaCadastro;
-    private EditText txtNomeParticipante;
+    private Button btnInserirCadastro;
+    private EditText txtNome;
     private EditText txtEmail;
     private EditText txtCPF;
 
@@ -20,15 +20,15 @@ public class InserirParticipanteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inserir_participante);
-        btnConfimaCadastro = findViewById(R.id.btn_confirmaCadPart);
-        txtNomeParticipante = (EditText) findViewById(R.id.txt_nomeParticipante);
+        btnInserirCadastro = findViewById(R.id.btn_confirmaCadPart);
+        txtNome = (EditText) findViewById(R.id.txt_nomeParticipante);
         txtEmail = (EditText) findViewById(R.id.txt_email);
         txtCPF = (EditText) findViewById(R.id.txt_cpf);
 
-        btnConfimaCadastro.setOnClickListener(new View.OnClickListener() {
+        btnInserirCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Participante participante = new Participante(txtNomeParticipante.getText().toString(), txtEmail.getText().toString(), txtCPF.getText().toString(), null);
+                Participante participante = new Participante(txtNome.getText().toString(), txtEmail.getText().toString(), txtCPF.getText().toString(), null);
                 DAO.getParticipanteInstance().add(participante);
                 setResult(Activity.RESULT_OK);
                 finish();
